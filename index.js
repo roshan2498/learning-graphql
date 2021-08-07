@@ -8,7 +8,17 @@ app.get("/", (req, res) => {
     res.send("<h1>Graphql is amazing!</h1>");
 });
 
-const root = { hello: () => "Hi, I'm Ram" };
+const root = {
+    friend: () => {
+        return {
+            id: "1084781239",
+            firstName: "Doctor",
+            lastName: "Jones",
+            gender: "Male",
+            email: "me@me.com",
+        };
+    },
+};
 
 app.use(
     "/graphql",
